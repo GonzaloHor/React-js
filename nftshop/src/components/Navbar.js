@@ -1,19 +1,16 @@
-import './NavBar.css'
+import './styles/NavBar.css'
 import cripto from './img/cripto.png'
-import cryptoShop from './img/cryptoShop.png'
 import consola from './img/consola-de-juego.png'
 import arte from './img/nft.png'
+import ImgNavBar from './CardWidget.js'
 
 
 
 
 
 const NavBar = () => {
- 
 
     return(
-         
-     
          <header class="menu-collapsed sidemenu" id="sidemenu">
         
             <div class="header">
@@ -27,7 +24,7 @@ const NavBar = () => {
 
         
             <div class="profile">
-                <div class="photo"><img src={cryptoShop} alt="NFT Shop" class="img" /> </div>
+                <ImgNavBar />
                 <div class="name"><span>NFT Shop</span></div>
             </div>
    
