@@ -127,7 +127,7 @@ body{
     display: block;
 }
 
-.item a:hover{
+.item a:hover {
     background-color: var(--hovercolor);
 }
 
@@ -149,30 +149,34 @@ body{
     padding: var(--padding) 0;
 }
 
-.menu-expanded{
+.menu-collapsed:hover{
     width: var(--width);
     box-shadow: 0 0 1px rgba(0, 0, 0, 5);
+    
 }
 
-.menu-expanded .header .title{
+.menu-collapsed:hover .header .title {
     display: inline-block;
     width:calc(100% - 50px);
-    margin-right: -5px;
-    padding: var(--padding);
+    margin-right: -px;
+
 }
 
-.menu-expanded .header .title span{
+
+.menu-collapsed:hover .header .title span {
     width: calc(var(--width) - var(--width-collapsed) - 5px);
     overflow: hidden;
     display: inline-block;
 }
 
-.menu-expanded .profile .photo{
+
+.menu-collapsed:hover .profile .photo{
     width: 200px;
 }
 
-.menu-expanded .profile .name{
+.menu-collapsed:hover .profile .name{
     width: 100%;
+    display: inline-block;
 }
 
 
@@ -193,10 +197,7 @@ body{
 }
 
 .menu-collapsed .menu-items .item .title{
-    width:0 ;
-    height: 0;
-    padding: 0;
-    margin: 0;
+  display: none;
 }
 
 .subMenuElements{
@@ -226,8 +227,60 @@ body{
 }
 
 
-.menu-expanded .menu-items .icon{
+
+.menu-collapsed:hover .menu-items .icon {
     width: 50px;
     padding: 5px;
     margin: 10PX;
+}
+
+.menu-collapsed:hover .menu-items .item a .title {
+      display: inline-block;
+
+}
+
+.menu-collapsed:hover .menu-items .item{
+    cursor: pointer;
+}
+
+
+.menu-collapsed:hover .menu-items .item .btn-submenu .title {
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+.menu-collapsed:hover .menu-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.menu-collapsed:hover .menu-items .item{
+    display: flex;
+}
+
+
+.menu-collapsed:hover .menu-items .item a{
+    display: flex;
+    width: 400px;
+    align-items: center;
+}
+
+.menu-collapsed:hover .menu-items .item .btn-submenu{
+    display: flex;
+    width: 400px;
+     align-items: center;
+}
+
+.menu-collapsed {
+    box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
+
+
+}
+
+.menu-collapsed:hover{
+    box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.75);
+
+
 }
