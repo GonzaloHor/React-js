@@ -1,7 +1,9 @@
 
 import './App.css';
-import NavBar from './components/Navbar.js';
-import ItemListContainer from './components/ItemListContainer.js';
+import NavBar from './components/NavBar/NavBar.js';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
+import ItemCounter from './ItemCounter/ItemCounter';
+
 
 
 function App() {
@@ -9,8 +11,11 @@ function App() {
     <div className="App">
       <header>
         <NavBar />
-        <ItemListContainer img="https://lorempixel.com/200/200/business/" imgdos="https://lorempixel.com/200/200/animals/" />
       </header>
+      <main className="container d-flex justify-content-center">
+        <ItemListContainer img="https://picsum.photos/400/300?grayscale"/>
+        <ItemCounter img="https://picsum.photos/400/300?grayscale" inital="0" stock="7"/>
+      </main>
     </div>
   );
 }

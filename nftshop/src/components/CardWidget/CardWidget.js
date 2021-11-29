@@ -1,4 +1,4 @@
-import './styles/NavBar.css'
+import '../NavBar/NavBar.css'
 import cryptoShop from './img/cryptoShop.png'
 
 

@@ -1,4 +1,4 @@
-import './styles/itemsCards.css';
+import './itemsCards.css';
 
 
 
@@ -11,12 +11,6 @@ const ItemListContainer = ({ img, imgdos }) => {
                 <img src={img}></img>
                 <p>Esto es una card creada para la prueba de las cosas</p>
             </div>
-
-            <div class="card-container">
-                <img src={imgdos}></img>
-                <p>Esto es una card creada para la prueba de las cosas</p>
-            </div>
-        
         </div>
  
    );
