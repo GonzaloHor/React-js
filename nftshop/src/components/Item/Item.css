@@ -1,0 +1,29 @@
+.card-container{
+    height: 350px;
+    width: 250px;
+    color: wheat;
+    border: solid 2px #928BBE;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 13px 13px 34px -4px rgba(0,0,0,0.75);
+    background:#928BBE ;
+    justify-content: center;
+}
+
+.card-container:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.card-container img{
+    width:95%;
+    overflow: hidden;
+    height: 150px;
+}
+.card-container p{
+    margin: 20px;
+    font-size: 15px;
+    text-align: start;
+    color: #343434;
+    font-weight: bold;
+}
