@@ -1,44 +1,26 @@
 import {useState, useRef} from 'react';
-
+import './ItemCounter.css';
 
 
 function ItemCounter({ stock, inital, img}) {
 
-    const [product, setProduct] = useState(Number(inital));
-    const [msgNoStok, setmsgNoStok] = useState("");
-    const [btnDisable, setbtnDisable] = useState(false);
-    const [btnDisabledos, setbtnDisabledos] = useState(false);
+    const [product, setProduct] = useState(inital);
+
 
 
     return (
         <>
             <div class="container-fluid d-flex">
-                <div class="card-container">
+                <div class="card-container container-couter">
                     <img src={img}></img>
-                    <p>Esto es una card creada para la prueba de las cosas</p>
+                    {
+                      product === stock ? <p>No hay mas Stock</p> : <p>Nos quedan {stock} productos</p>
+                    }
                     <div className="boxAmount">
                       <h2>Monto</h2>
-                      <span>{msgNoStok}</span>
                       <h3>{product}</h3>
-                      <button id="btn-decrement" disabled={btnDisable} className="bnt-decrement" onClick={()=>{ 
-                          if(product == 0){
-                            setbtnDisable(true)
-                          } else {
-                            setProduct(product - 1)
-                            setbtnDisabledos(false)
-                            setmsgNoStok("")
-                          }
-                         }}>Decrementar</button>
-                      <button id="btn-increment" disabled={btnDisabledos} className="bnt-increment" onClick={()=>{ 
-                          if(product == stock){
-                            setbtnDisabledos(true)
-                            setmsgNoStok("No hay mas Stock")
-                          } else {
-                            setProduct(product + 1)
-                            setbtnDisable(false)
-                            
-                          }
-                         }}>Incrementar</button>
+                      <button id="btn-decrement" disabled={product === 0} className="bnt-decrement" onClick={()=>{setProduct(product - 1)}}>Decrementar</button>
+                      <button id="btn-increment" disabled={product === stock} className="bnt-increment" onClick={()=>{setProduct(product + 1)}}>Incrementar</button>
                       <button className="bnt-reset" onClick={()=>{ setProduct(0)}}>Resetear</button>
                     </div>
                 </div>

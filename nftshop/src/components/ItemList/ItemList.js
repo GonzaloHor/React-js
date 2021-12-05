@@ -5,7 +5,7 @@ const ItemList = ({products}) => {
   
 
     return (
-        <ul className="ListGroup d-flex">
+        <ul className=" d-flex flex-wrap justify-content-center">
             {products.map(product =><Item key={product.id} product={product}/>)}
         </ul>
     )

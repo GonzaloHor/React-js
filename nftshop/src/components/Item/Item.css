@@ -1,13 +1,15 @@
 .card-container{
-    height: 350px;
     width: 250px;
+    height: 400PX;
     color: wheat;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
     border: solid 2px #928BBE;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 13px 13px 34px -4px rgba(0,0,0,0.75);
     background:#928BBE ;
-    justify-content: center;
 }
 
 .card-container:hover{
@@ -16,14 +18,67 @@
 }
 
 .card-container img{
-    width:95%;
+    width:100%;
     overflow: hidden;
-    height: 150px;
+    height: 170px;
 }
 .card-container p{
     margin: 20px;
     font-size: 15px;
     text-align: start;
     color: #343434;
+}
+.boxAmount{
+    border-top:solid 2px wheat;
+}
+
+.boxAmount h2{
+    margin-top: 10px;
+    font-size: 24px;
     font-weight: bold;
+}
+
+.boxAmount h3{
+        margin-top: 5px;
+        font-size: 24px;
+        font-weight: bold;
+}
+
+.bnt-decrement{
+    border: none;
+    font-weight: bold;
+    border-radius: 15px 0px 0px 15px;
+    font-size: 15px;
+    padding: 12px;
+}
+
+.bnt-increment{
+    border: none;
+    font-weight: bold;
+    border-radius: 0px 15px 15px 0px;
+    font-size: 15px;
+    padding: 12px;
+    border: solid 2px #928BBE;
+}
+
+.bnt-reset{
+    border: none;
+    font-weight: bold;
+    border-radius: 0px 0px 15px 15px;
+    font-size: 15px;
+    padding: 12px;
+    border: solid 2px #928BBE;
+    margin-bottom: 10px;
+    border-top: none;
+}
+
+.boxAmount button:hover{
+    background: #343434;
+    color: wheat;
+}
+
+
+.titulo{
+    font-size: 20px;
+    margin-top: 10px;
 }

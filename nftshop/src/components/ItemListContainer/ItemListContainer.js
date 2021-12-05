@@ -1,59 +1,47 @@
-import {useState} from 'react';
-import './itemsCards.css';
+import {useState, useEffect} from 'react';
+import './ItemsListContainer.css';
 import ItemList from '../ItemList/ItemList.js';
+import ItemCounter from '../ItemCounter/ItemCounter';
+
 
 
 
 
 
 const ItemListContainer = () => {
-
-    const [products, setProducts] = useState([]);
-
-    const promesaProductos = new Promise((resolve, reject) =>{
-        setTimeout(() => {
-            resolve( 
-                [
-                {  
-                    id: 1,
-                    name: "Celuar",
-                    thumbnail: "https://api.lorem.space/image/watch?w=300&h=300",
-                    category: "Reloj",
-                    price: 80000,
-                    title: "Celular"
-                },
-                {  
-                    id: 2,
-                    name: "Celuar",
-                    thumbnail: "https://api.lorem.space/image/shoes?w=300&h=300",
-                    category: "Zapatillas",
-                    price: 7600,
-                    title: "Zapatillas"
-                },
-                {  
-                 
-                    id: 3,
-                    name: "Celuar",
-                    thumbnail: "https://api.lorem.space/image/fashion?w=300&h=300",
-                    category: "Ropa",
-                    price: 5500,
-                    title: "Ropa"
-                }
-            ])
-        }, 3000);;
-    });
-    
-    promesaProductos.then(res =>{
-        setProducts(res)
-    });
+    const [products, setProducts] = useState([])
+    const [input, setInput] = useState('')
 
 
+    // useEffect(() =>{
+    //     fetch(`https://api.mercadolibre.com/sites/MLA/search?q=celulares}`)
+    //     .then(response =>{
+    //         return response.json()
+    //     }).then(res =>{
+    //         setProducts(res.results.slice(0,10))
+    //     })
+    // }, [])
 
-    
+       const buscarProducto = () =>{
+        fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${input}`)
+        .then(response =>{
+            return response.json()
+        }).then(res =>{
+            setProducts(res.results.slice(0,10))
+        })
+    }
+
+ 
     return(
 
-        <div class="container-fluid d-flex">
+        <div class="container-fluid d-flex contenedor-principal">
+            <div className="mt-4 ms-4">
+            <input type="text" onChange={(evt) => setInput(evt.target.value)}/>
+            <button className="btn btn-primary ms-4" onClick={buscarProducto}>Buscar Producto</button> 
+
+            </div>
             <ItemList products={products} />
+
          </div>
    );
 }
