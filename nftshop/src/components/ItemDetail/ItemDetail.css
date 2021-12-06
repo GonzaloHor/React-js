@@ -1,0 +1,13 @@
+.imagen{
+    border-radius: 50px;
+    margin: 20px;
+}
+
+.contenedor-detalle{
+    color: wheat;
+}
+
+.descripción{
+    font-size: 25px;
+    font-weight: bold;
+}

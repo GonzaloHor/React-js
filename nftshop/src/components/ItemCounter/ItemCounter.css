@@ -1,3 +1,33 @@
 .container-couter{
     height: 450px;
 }
+
+.bnt-decrement{
+    border-radius: 50px;
+    margin-right: 15px;
+    margin-left: 15px;
+
+}
+
+.bnt-increment{
+    border-radius: 50px;
+    margin-right: 15px;
+    margin-left: 15px;
+
+}
+
+.bnt-reset{
+    border-radius: 50px;
+    margin-right: 15px;
+    margin-left: 15px;
+
+}
+
+.caja-contador{
+    background-color: gray;
+    height: 170px;
+    width: 500px;
+    border-radius: 50px;
+    margin-top: 10px;
+    padding-top: 10px;
+}

@@ -3,7 +3,8 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar.js';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
 import ItemCounter from './components/ItemCounter/ItemCounter.js';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
+
 
 
 
@@ -14,7 +15,8 @@ function App() {
         <NavBar />
       </header>
       <main>
-       <ItemListContainer /> 
+       {/* <ItemListContainer />  */}
+       <ItemDetailContainer itemId={1} />
       </main>
     </div>
   );
