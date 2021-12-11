@@ -297,3 +297,65 @@ body{
 
 
 }
+
+
+.cantidadProductosCard{
+    font-size: 400px;
+
+}
+
+.menu-collapsed .cantidadProductosCard{
+    font-size: 20px;
+    margin-top: 10PX;
+    margin-bottom: 0px;
+    
+}    
+
+.menu-collapsed:hover .cantidadProductosCard{
+    font-size:25px ;
+}
+
+
+
+.menu-collapsed:hover  .img-header{
+    width: 50px;
+    margin-top: 20PX;
+    margin-bottom: 20PX;
+    margin-left: 20px;
+}
+
+.menu-collapsed .img-header{
+    width: 30px;
+    margin-top: 20PX;
+    margin-bottom: 20PX;
+
+}
+
+.menu-collapsed:hover .header{
+    display: flex;
+    justify-content: start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: end;
+}
+
+
+.menu-collapsed .header p{
+    display: none;
+}
+
+
+
+
+.menu-collapsed:hover .header p{
+    display: inline;
+    font-size: 17px;
+    margin-left: 15;
+    font-weight: bold;
+}
+
+
+.menu-collapsed:hover .img-cardWidget{
+    width: 50px;
+}

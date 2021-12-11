@@ -1,8 +1,10 @@
 import './NavBar.css'
-import cripto from './img/cripto.png'
-import consola from './img/consola-de-juego.png'
-import arte from './img/nft.png'
+import relojes from './img/reloj-inteligente.png'
+import zapas from './img/zapatillas.png'
+import ropa from './img/gancho-de-ropa.png'
 import CardWidget from '../CardWidget/CardWidget.js'
+import cryptoShop from './img/cryptoShop.png'
+import { Link } from 'react-router-dom'
 
 
 
@@ -14,44 +16,36 @@ const NavBar = () => {
          <header class="menu-collapsed sidemenu" id="sidemenu">
         
             <div class="header">
-                <div class="title"><span>Un Nuevo Mundo</span></div>
-                <div class="menu-btn" id="menu-btn">
-                    <div class="btn-hamburger"></div>
-                    <div class="btn-hamburger"></div>
-                    <div class="btn-hamburger"></div>
-                </div>
+                <a href="/"><img src={cryptoShop} alt="NFT Shop" class="img-header" /> </a>
+                <p>El mejor lugar para comprar</p>
             </div>
 
         
             <div class="profile">
                 <CardWidget />
-                <div class="name"><span>NFT Shop</span></div>
             </div>
    
             <div class="menu-items">
-                <div class="item">
+
+  
+                <Link  to={`/category/Ropa`} class="item">
                     <div id="btn-submenu" class="btn-submenu">
-                        <div class="icon"> <img src={arte} alt="Arte Nft" class="img" /> </div>
-                        <div class="title">Arte Nft</div>
-                        <ul class="submenu" id="submenu">
-                            <a href="#"><li class="subMenuElements">Fotos</li></a>
-                            <a href="#"><li class="subMenuElements">Iustraciones</li></a>
-                            <a href="#"><li class="subMenuElements">Animaciones</li></a>
-                        </ul>
+                        <div class="icon"> <img src={ropa} alt="Arte Nft" class="img" /> </div>
+                        <div class="title">Ropa</div>
                     </div>
-                </div>
-                <div class="item">
+                </Link>
+                <Link  to={`/category/Reloj`} class="item">
                     <a href="">
-                        <div class="icon"> <img src={cripto} alt="Cripto Monedas" class="img" /> </div>
-                        <div class="title">Cripto Monedas</div>
+                        <div class="icon"> <img src={relojes} alt="Cripto Monedas" class="img" /> </div>
+                        <div class="title">Relojes</div>
                     </a>
-                </div>
-                <div class="item">
+                </Link>
+                <Link  to={`/category/Zapatillas`} class="item">
                     <a href="">
-                        <div class="icon"> <img src={consola} alt="Juegos Play To Earn" class="img" /> </div>
-                        <div class="title">Juegos Play To Earn</div>
+                        <div class="icon"> <img src={zapas} alt="Juegos Play To Earn" class="img" /> </div>
+                        <div class="title">Zapatillas</div>
                     </a>
-                </div>
+                    </Link>
             </div>
          </header>
    );

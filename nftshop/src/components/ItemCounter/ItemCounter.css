@@ -30,4 +30,6 @@
     border-radius: 50px;
     margin-top: 10px;
     padding-top: 10px;
+    box-shadow: 13px 13px 34px -4px rgba(0,0,0,0.75);
+
 }

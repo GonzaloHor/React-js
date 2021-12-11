@@ -1,6 +1,6 @@
 .card-container{
     width: 250px;
-    height: 400PX;
+    height: 350PX;
     color: wheat;
     margin-top: 40px;
     margin-left: 20px;
@@ -81,4 +81,8 @@
 .titulo{
     font-size: 20px;
     margin-top: 10px;
+}
+
+.imagen{
+    display: inline-block;
 }

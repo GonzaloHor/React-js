@@ -1,34 +1,33 @@
 import {useState, useEffect} from 'react';
-import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.js';
-import ItemCounter from '../ItemCounter/ItemCounter';
-import { getProducts } from '../../products'
+import { getProductsByCategory } from '../../products'
+import { useParams } from "react-router";
 
 
 
 
 
 
-const ItemListContainer = () => {
+const ItemsByCategory = () => {
 
     const [products, setProducts] = useState([]);
     
 
+    const { categoryid } = useParams()
+
+
     useEffect(() => {
-        const list = getProducts()
-        
-        list.then(item => {
+        getProductsByCategory(categoryid).then(item => {
             setProducts(item)
         }).catch(err  => {
             console.log(err)
         })
 
         return (() => {
-            setProducts([])
+            setProducts()
         })
 
-    }, [])
-
+    }, [categoryid])
 
     
     return(
@@ -39,4 +38,4 @@ const ItemListContainer = () => {
    );
 }
 
-export default ItemListContainer;
+export default ItemsByCategory;

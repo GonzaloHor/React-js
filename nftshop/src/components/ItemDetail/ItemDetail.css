@@ -10,4 +10,19 @@
 .descripción{
     font-size: 25px;
     font-weight: bold;
+
+
+}
+
+
+.arrow-return img{
+    width: 50px;
+    position: fixed;
+    align-self:baseline;
+    left: 300px;
+    top: 50px;
+}
+
+.imagen{
+    box-shadow: 13px 13px 34px -4px rgba(0,0,0,0.75);
 }

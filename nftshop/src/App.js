@@ -2,22 +2,34 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.js';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
-import ItemCounter from './components/ItemCounter/ItemCounter.js';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
+import ItemsByCategory from './components/ItemsByCategory/ItemsByCategory';
 
-
-
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header>
+      <BrowserRouter>
         <NavBar />
-      </header>
       <main>
-       {/* <ItemListContainer />  */}
-       <ItemDetailContainer itemId={1} />
+        <Switch>
+
+        <Route exact path='/'>
+        <ItemListContainer /> 
+        </Route>
+        
+        <Route path='/detail/:paramId'>
+        <ItemDetailContainer />
+        </Route>
+
+        <Route path='/category/:categoryid'>
+        <ItemsByCategory />
+        </Route>
+      
+        </Switch>
       </main>
+      </BrowserRouter>
     </div>
   );
 }
