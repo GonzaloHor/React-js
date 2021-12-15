@@ -2,23 +2,24 @@ import {useState, useRef} from 'react';
 import './ItemCounter.css';
 
 
-function ItemCounter({ stock, inital, img}) {
 
-    const [product, setProduct] = useState(inital);
+function ItemCounter({ stock, inital, onConfirm}) {
+
+  
+  const [cantidadProducto, setCantidadProducto] = useState(inital);
 
 
 
     return (
         <>
-                <div className="caja-contador">
-                    {
-                      product === stock ? <p>No hay mas Stock</p> : <p>Nos quedan {stock} productos</p>
-                    }
+                <div>
+                  
                     <div>
-                      <h3>{product}</h3>
-                      <button id="btn-decrement" disabled={product === 0} className="bnt-decrement" onClick={()=>{setProduct(product - 1)}}>Decrementar</button>
-                      <button id="btn-increment" disabled={product === stock} className="bnt-increment" onClick={()=>{setProduct(product + 1)}}>Incrementar</button>
-                      <button className="bnt-reset" onClick={()=>{ setProduct(0)}}>Resetear</button>
+                      <button id="btn-decrement" disabled={cantidadProducto === 0} className="bnt-decrement" onClick={()=>{setCantidadProducto(cantidadProducto - 1); onConfirm(cantidadProducto)}}>-</button>
+                      <button id="btn-increment" disabled={cantidadProducto === stock} className="bnt-increment" onClick={()=>{setCantidadProducto(cantidadProducto + 1); onConfirm(cantidadProducto)}}>+</button>
+                      {
+                      cantidadProducto === stock ? <p className='mt-2'>No hay mas Stock</p> : <p className='mt-2'>Nos quedan {stock} productos</p>
+                    }
                     </div>
                 </div>
            

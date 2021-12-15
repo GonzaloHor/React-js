@@ -3,9 +3,22 @@ import ItemCounter from "../ItemCounter/ItemCounter";
 import './ItemDetail.css';
 import arrowReturn from './img/undo.png'
 import { Link } from 'react-router-dom'
+import {useState} from 'react';
+
+
+
 
 
 const ItemDetail = ({ product }) => {
+
+    const [compras, setCompras] = useState(0);
+    const [comprasACargar, setComprasACargar] = useState(0);
+
+    function addToCart(cantidadProductos) {
+        setCompras(cantidadProductos)
+    }
+    console.log(comprasACargar)
+
 
     return(
 
@@ -20,7 +33,30 @@ const ItemDetail = ({ product }) => {
         <h1>$ {product?.price}</h1>
         <h1 className="descripción">{product?.description}</h1>
         <div className="d-flex justify-content-center">
-        <ItemCounter inital={1} stock={product?.stock}/>
+      
+
+            {
+            
+            comprasACargar === 0 
+            ?  
+            
+            <div className="caja-contador">
+            <div className="cantidad-compras">{compras}</div>
+            <ItemCounter inital={1} stock={product?.stock} onConfirm={addToCart}/>
+            <button className="bnt-reset" disabled={compras <= 0} onClick={()=>{setComprasACargar(compras)}}>Agregar al carrito</button>
+            </div> 
+            
+            :   
+            
+            <div className="caja-ir-compra">
+            <h3>¡Agregaste {comprasACargar} productos al carrito!</h3>
+            <Link to={`/card`} className="bnt-reset" >Ir al carrito</Link>
+            </div> 
+            
+            } 
+               
+
+           
         </div>
        
     </div>       

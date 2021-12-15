@@ -1,20 +1,23 @@
-.container-couter{
-    height: 450px;
-}
+
 
 .bnt-decrement{
+    width: 55px;
     border-radius: 50px;
     margin-right: 15px;
     margin-left: 15px;
+
 
 }
 
 .bnt-increment{
+    width: 60px;
     border-radius: 50px;
     margin-right: 15px;
     margin-left: 15px;
 
 }
+
+
 
 .bnt-reset{
     border-radius: 50px;
@@ -23,13 +26,19 @@
 
 }
 
-.caja-contador{
-    background-color: gray;
-    height: 170px;
-    width: 500px;
-    border-radius: 50px;
-    margin-top: 10px;
-    padding-top: 10px;
-    box-shadow: 13px 13px 34px -4px rgba(0,0,0,0.75);
 
+
+.bnt-increment:hover{
+    background: #343434;
+    color: white;
+}
+
+.bnt-decrement:hover{
+    background: #343434;
+    color: white;
+}
+
+.bnt-reset:hover{
+    background: #343434;
+    color: white;
 }

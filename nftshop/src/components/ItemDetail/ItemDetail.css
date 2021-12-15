@@ -26,3 +26,50 @@
 .imagen{
     box-shadow: 13px 13px 34px -4px rgba(0,0,0,0.75);
 }
+
+.caja-contador{
+    background-color: gray;
+    height: 220px;
+    width: 300px;
+    border-radius: 50px;
+    margin-top: 10px;
+    padding-top: 10px;
+    box-shadow: 13px 13px 34px -4px rgba(0,0,0,0.75);
+
+}
+
+.bnt-reset{
+    margin-top: 10px;
+    border-radius: 50px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background: wheat;;
+    
+
+}
+
+.cantidad-compras{
+    font-weight:bold;
+    font-size: 25px;
+}
+
+
+.caja-ir-compra{
+    background-color: gray;
+    height: 150px;
+    width: 350px;
+    border-radius: 50px;
+    margin-top: 10px;
+    padding-top: 10px;
+    box-shadow: 13px 13px 34px -4px rgba(0,0,0,0.75);
+}
+
+
+.caja-ir-compra h3{
+   margin-top: 20px; 
+   font-size: 20px;
+}
