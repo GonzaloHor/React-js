@@ -5,36 +5,32 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer.
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
 import ItemsByCategory from './components/ItemsByCategory/ItemsByCategory';
 import Card from './components/Card/Card';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartContextProvider } from './context/CartContext'
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-      <main>
-        <Switch>
+      <CartContextProvider>
+        <BrowserRouter>
+          <NavBar />
+        <main>
+          <Routes>
 
-        <Route exact path='/'>
-        <ItemListContainer /> 
-        </Route>
+          <Route path='/' element={<ItemListContainer />}/>
+
+          <Route path='detail/:paramId' element={<ItemDetailContainer />}/>
+    
+          <Route path='category/:categoryid' element={<ItemsByCategory />}/>
+          
+          <Route path='card' element={<Card />}/>
         
-        <Route path='/detail/:paramId'>
-        <ItemDetailContainer />
-        </Route>
-
-        <Route path='/category/:categoryid'>
-        <ItemsByCategory />
-        </Route>
-
-        <Route path='/card'>
-        <Card />
-        </Route>
-      
-        </Switch>
-      </main>
-      </BrowserRouter>
+          </Routes>
+        </main>
+        </BrowserRouter>
+      </CartContextProvider>
     </div>
   );
 }
