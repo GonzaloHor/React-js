@@ -15,11 +15,25 @@ const ItemDetail = ({ product }) => {
     const [compras, setCompras] = useState(0);
     const [comprasACargar, setComprasACargar] = useState(0);
 
-    const  { addItem } = useContext(CartContext)
+    const  { setSales,sales } = useContext(CartContext)
 
     function addToCart(cantidadProductos) {
         setCompras(cantidadProductos)
     }
+
+    
+    const addItem = (product, quantity) =>{
+    
+
+        Object.defineProperty(product, 'quantity', {
+            value: quantity,
+          });
+    
+        setSales([...sales, product])
+        console.log(sales);
+    }
+    
+
 
 
 
@@ -39,27 +53,15 @@ const ItemDetail = ({ product }) => {
         <div className="d-flex justify-content-center">
       
 
-            {
-            
-            comprasACargar === 0 
-            ?  
+   
             
             <div className="caja-contador">
             <div className="cantidad-compras">{compras}</div>
             <ItemCounter inital={1} stock={product?.stock} onConfirm={addToCart}/>
-            <button className="bnt-reset" disabled={compras <= 0} onClick={()=>{setComprasACargar(compras); addItem(product,comprasACargar)}}>Agregar al carrito</button>
+            <button className="bnt-reset" disabled={compras <= 0} onClick={()=>{addItem(product,compras)}}>Agregar al carrito</button>
             </div> 
             
-            :   
-            
-            <div className="caja-ir-compra">
-            <h3>¡Agregaste {comprasACargar} productos al carrito!</h3>
-            <Link to={`/card`} className="bnt-reset" >Ir al carrito</Link>
-            </div> 
-            
-            } 
-               
-
+        
            
         </div>
        

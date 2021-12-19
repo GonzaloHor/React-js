@@ -6,7 +6,10 @@ import './ItemCounter.css';
 function ItemCounter({ stock, inital, onConfirm}) {
 
   
+  
   const [cantidadProducto, setCantidadProducto] = useState(inital);
+
+  
 
 
 

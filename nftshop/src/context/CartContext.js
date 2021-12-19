@@ -10,23 +10,11 @@ export const CartContextProvider = ({children}) =>{
 
 
 
-    const addItem = (product, quantity) =>{
-    
-
-        Object.defineProperty(product, 'quantity', {
-            value: quantity,
-          });
-    
-        setSales([...sales, product])
-        console.log(sales);
-    }
-    
-
 
    
     return (
         <Context.Provider value={{
-            setSales, addItem,setProduct,setQuantity
+            setSales, sales
         }}>
             {children}
         </Context.Provider>
