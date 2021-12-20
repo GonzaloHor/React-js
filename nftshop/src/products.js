@@ -1,8 +1,19 @@
+import reloj1 from '../src/img/reloj.jpg'
+import reloj2 from '../src/img/reloj2.jpg'
+import ropa from '../src/img/ropa.jpg'
+import zapas from '../src/img/zapas.jpeg'
+import zapas2 from '../src/img/zapas2.jpg'
+
+
+
+
+
+
 const products =   [
     {  
         id: 1,
         name: "Reloj",
-        thumbnail: "https://api.lorem.space/image/watch?w=300&h=300",
+        thumbnail: reloj1,
         description: "Los mejores relojes de todo Liniers",
         price: 80000,
         title: "Reloj",
@@ -12,7 +23,7 @@ const products =   [
     {  
         id: 2,
         name: "Zapatillas",
-        thumbnail: "https://api.lorem.space/image/shoes?w=300&h=300",
+        thumbnail: zapas,
         description: "Las mejores Zapatillas del mundo",
         price: 7600,
         title: "Zapatillas",
@@ -23,7 +34,7 @@ const products =   [
      
         id: 3,
         name: "Ropa",
-        thumbnail: "https://api.lorem.space/image/fashion?w=300&h=300",
+        thumbnail: ropa,
         description: "Ropa bien facherita para este verano",
         price: 5500,
         title: "Ropa",
@@ -46,7 +57,7 @@ const products =   [
     {  
         id: 5,
         name: "Zapatillas",
-        thumbnail: "https://api.lorem.space/image/shoes?w=300&h=300",
+        thumbnail: zapas2,
         description: "Las mejores Zapatillas del mundo",
         price: 7600,
         title: "Zapatillas",
@@ -56,7 +67,7 @@ const products =   [
     {  
         id: 6,
         name: "Reloj",
-        thumbnail: "https://api.lorem.space/image/watch?w=300&h=300",
+        thumbnail: reloj2,
         description: "Los mejores relojes de todo Liniers",
         price: 9000,
         title: "Reloj",
@@ -64,7 +75,7 @@ const products =   [
         category: "Reloj"
     },
     {  
-        id: 1,
+        id: 7,
         name: "Reloj",
         thumbnail: "https://api.lorem.space/image/watch?w=300&h=300",
         description: "Los mejores relojes de todo Liniers",
@@ -74,7 +85,7 @@ const products =   [
         category: "Reloj"
     },
     {  
-        id: 5,
+        id: 8,
         name: "Zapatillas",
         thumbnail: "https://api.lorem.space/image/shoes?w=300&h=300",
         description: "Las mejores Zapatillas del mundo",

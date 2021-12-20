@@ -1,11 +1,21 @@
 .imagen{
     border-radius: 50px;
     margin: 20px;
+    width: 400Px;
 }
 
 .contenedor-detalle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
     color: wheat;
 }
+
+.cajaImagen{
+ margin-right:50px;
+}
+
 
 .descripción{
     font-size: 25px;
@@ -19,7 +29,7 @@
     width: 50px;
     position: fixed;
     align-self:baseline;
-    left: 300px;
+    left: 200px;
     top: 50px;
 }
 

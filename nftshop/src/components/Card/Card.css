@@ -1,0 +1,35 @@
+.titulo{
+    color: white;
+    font-size: 35px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.caja-remover{
+    display: flex;
+    justify-content: center;
+}
+
+.caja-remover button{
+    width: 150px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 25px;
+    align-self: flex-end;
+    margin-left: 100px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    box-shadow: 13px 13px 34px -4px rgba(0,0,0,0.75);
+    border: none;
+}
+
+.caja-remover button:hover{
+    background-color: rgb(107, 43, 43);
+    border: solid 1px white;
+}
+
+
+.caja-sales{
+    display: flex;
+}
