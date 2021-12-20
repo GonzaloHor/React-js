@@ -2,14 +2,13 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Sale.css'
 import CartContext  from '../../context/CartContext'
-
+import { formatter } from '../../products'
 
 const Sale = ({ sale }) => {
 
     const  { sales,remobeItem } = useContext(CartContext)
 
-
- 
+    
   
     return (
         <div className="card-containe-sale card-container">
@@ -22,10 +21,10 @@ const Sale = ({ sale }) => {
                     Cantidad: <strong>{sale.quantity}</strong> 
                 </h3>
                 <p>
-                    Precio c/u: ${sale.price}
+                    Precio c/u: {formatter.format(sale.price)}
                 </p>
                 <p>
-                    Precio total: ${sale.price * sale.quantity}
+                    Precio total: { formatter.format(sale.price * sale.quantity)}
                 </p>
                
             </div>

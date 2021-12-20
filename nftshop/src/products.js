@@ -119,3 +119,11 @@ export const getProductsByCategory = (category) => {
         setTimeout(() => resolve(product), 500)
     })
 }
+
+
+
+export const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2
+})

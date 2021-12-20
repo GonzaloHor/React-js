@@ -11,7 +11,9 @@ import CartContext  from '../../context/CartContext'
 
 const ImgNavBar = () => {
 
-    const  { purchase } = useContext(CartContext)
+    const  { purchase,  } = useContext(CartContext)
+
+
 
 
   

@@ -7,13 +7,59 @@ export const CartContextProvider = ({children}) =>{
     const [sales, setSales] = useState([]);
     const [purchase, setPurchase] = useState(0);
 
+   
+
+
+    const addItem = (product, compras, sales) =>{
+        if(sales.length === 0){
+
+            Object.defineProperty(product, 'quantity', {
+                value: compras,
+                writable: true,
+                enumerable: true,
+                configurable: true
+            });
+        
+            setSales([...sales, product])
+           
+        } else {
+
+            let busquedaProducto = sales.find( compra => compra.id === product.id);
+
+            if(busquedaProducto === undefined){
+
+                Object.defineProperty(product, 'quantity', {
+                    value: compras,
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                });
+            
+                setSales([...sales, product])
+             
+
+            } else {
+                Object.defineProperty(busquedaProducto, 'quantity', {
+                    value: busquedaProducto.quantity + compras,
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                });
+               
+             }
+
+        }
+       
+    }
+
     const remobeItem = (sales, sale) =>{
 
+        setPurchase(purchase - sale.quantity)
         let newSales = sales.filter(function(sales) {
             return sales.id !== sale.id; 
         });
         setSales(newSales)
-        setPurchase(sales.length - 1)
+       
     } 
 
     const remobeAllItem = (sales) =>{
@@ -26,7 +72,7 @@ export const CartContextProvider = ({children}) =>{
    
     return (
         <Context.Provider value={{
-            setSales, sales, setPurchase, purchase,remobeItem,remobeAllItem
+            setSales, sales, setPurchase, purchase,remobeItem,remobeAllItem,addItem
         }}>
             {children}
         </Context.Provider>

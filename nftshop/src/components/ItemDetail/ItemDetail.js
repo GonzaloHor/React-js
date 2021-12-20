@@ -15,58 +15,26 @@ const ItemDetail = ({ product }) => {
     const [compras, setCompras] = useState(0);
     const [comprasACargar, setComprasACargar] = useState(0);
 
-    const  { setSales, sales ,setPurchase } = useContext(CartContext)
+    const  { sales ,setPurchase,addItem,purchase } = useContext(CartContext)
 
     function addToCart(cantidadProductos) {
         setCompras(cantidadProductos)
     }
 
     
-    const addItem = (product, compras, sales) =>{
+  
+    const sumaSales = (sales)=>{
+        let pruchaseQuantity = 0;
 
-
-        if(sales.length === 0){
-
-            Object.defineProperty(product, 'quantity', {
-                value: compras,
-                writable: true,
-                enumerable: true,
-                configurable: true
-            });
-        
-            setSales([...sales, product])
-            setPurchase(sales.length + 1)
-
-        } else {
-
-            let busquedaProducto = sales.find( compra => compra.id === product.id);
-
-            if(busquedaProducto === undefined){
-
-                Object.defineProperty(product, 'quantity', {
-                    value: compras,
-                    writable: true,
-                    enumerable: true,
-                    configurable: true
-                });
-            
-                setSales([...sales, product])
-                setPurchase(sales.length + 1)
-
-            } else {
-                Object.defineProperty(busquedaProducto, 'quantity', {
-                    value: busquedaProducto.quantity + compras,
-                    writable: true,
-                    enumerable: true,
-                    configurable: true
-                });
-            }
-
+        for(let i = 0; i < sales.length;i++){
+            pruchaseQuantity = pruchaseQuantity + sales[i].quantity
         }
-    
 
+
+        setPurchase(pruchaseQuantity)
+        console.log(pruchaseQuantity)
+       
     }
-    
 
 
 
@@ -100,14 +68,14 @@ const ItemDetail = ({ product }) => {
                 <div className="caja-contador">
                 <div className="cantidad-compras">{compras}</div>
                 <ItemCounter inital={1} stock={product?.stock} onConfirm={addToCart}/>
-                <button className="bnt-reset" disabled={compras <= 0} onClick={()=>{addItem(product,compras,sales);setComprasACargar(compras)}}>Agregar al carrito</button>
+                <button className="bnt-reset" disabled={compras <= 0} onClick={()=>{addItem(product,compras,sales);setComprasACargar(compras);setPurchase(purchase + compras)}}>Agregar al carrito</button>
                 </div> 
                     
                     :   
                 
                     <div className="caja-ir-compra">
                     <h3>¡Agregaste {comprasACargar} productos al carrito!</h3>
-                    <Link to={`/card`} className="bnt-reset" >Ir al carrito</Link>
+                    <Link to={`/card`} className="bnt-reset" >Terminar compra</Link>
                     </div> 
                     
                 } 

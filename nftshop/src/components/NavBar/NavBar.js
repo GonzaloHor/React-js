@@ -5,12 +5,16 @@ import ropa from './img/gancho-de-ropa.png'
 import CardWidget from '../CardWidget/CardWidget.js'
 import cryptoShop from './img/cryptoShop.png'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import CartContext  from '../../context/CartContext'
 
 
 
 
 
 const NavBar = () => {
+
+    const  { sales} = useContext(CartContext)
 
     return(
          <header class="menu-collapsed sidemenu" id="sidemenu">
@@ -21,9 +25,17 @@ const NavBar = () => {
             </div>
 
         
-            <div class="profile">
-                <CardWidget />
-            </div>
+          
+                {
+                   sales.length === 0 ? 
+                   <></>
+                   :
+                   <div class="profile">
+                   <CardWidget />
+                   </div>
+                }
+               
+          
    
             <div class="menu-items">
 

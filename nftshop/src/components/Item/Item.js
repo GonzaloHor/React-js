@@ -1,5 +1,7 @@
 import './Item.css'
 import { Link } from 'react-router-dom'
+import { formatter } from '../../products'
+
 
 const Item = ({ product }) => {
   
@@ -11,7 +13,7 @@ const Item = ({ product }) => {
             </h2>
 
             <p>
-                Precio: ${product.price}
+                Precio: {formatter.format(product.price)}
             </p>
             <Link className='btn btn-primary mb-4' to={`/detail/${product.id}`}>Ver detalle</Link>
 
