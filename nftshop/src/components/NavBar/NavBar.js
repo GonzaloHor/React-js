@@ -5,14 +5,17 @@ import ropa from './img/gancho-de-ropa.png'
 import CardWidget from '../CardWidget/CardWidget.js'
 import cryptoShop from './img/cryptoShop.png'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import CartContext  from '../../context/CartContext'
+import { getCategories } from '../../products'
+
 
 
 
 
 
 const NavBar = () => {
+
 
     const  { sales} = useContext(CartContext)
 

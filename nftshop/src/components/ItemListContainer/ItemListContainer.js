@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react';
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.js';
-import ItemCounter from '../ItemCounter/ItemCounter';
-import { getProducts } from '../../products'
-
+import { collection, doc, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../services/firebase/firebase'
+import { useParams } from 'react-router-dom'; 
 
 
 
@@ -12,30 +12,56 @@ import { getProducts } from '../../products'
 const ItemListContainer = () => {
 
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true)
+    const { categoryId } = useParams()
     
 
     useEffect(() => {
-        const list = getProducts()
-        
-        list.then(item => {
-            setProducts(item)
-        }).catch(err  => {
-            console.log(err)
-        })
+        if(!categoryId){
+            console.log("Este si que bva")
+            setLoading(true)
+            getDocs(collection(db, 'items')).then((querySnapshot)=>{
+                const products = querySnapshot.docs.map(doc =>{
+                    return {id: doc.id, ...doc.data()}
+                })
+                setProducts(products)
+            }).catch((error) =>{
+                console.log('Error searching item', error)
+            }).finally(()=>{
+                setLoading(false)
+            })
+        } else {
+            console.log("Si queiere")
+            setLoading(true)
+            getDocs(query(collection(db, 'items'), where('category', '==', categoryId))).then((querySnapshot)=>{
+                const products = querySnapshot.docs.map(doc =>{
+                    return {id: doc.id, ...doc.data()}
+                })
+                setProducts(products)
+            }).catch((error) =>{
+                console.log('Error searching item', error)
+            }).finally(()=>{
+                setLoading(false)
+            })
+        }
+    
 
-        return (() => {
-            setProducts([])
-        })
-
-    }, [])
+    }, [categoryId])
 
 
     
     return(
-
-        <div class="container-fluid d-flex">
+        <>
+        {
+            loading === true ? 
+            <h1>Cargando</h1>
+            :
+            <div class="container-fluid d-flex">
             <ItemList products={products} />
-         </div>
+            </div>
+        }
+        </>
+       
    );
 }
 

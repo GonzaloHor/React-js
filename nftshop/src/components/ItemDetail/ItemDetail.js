@@ -13,12 +13,13 @@ import CartContext from '../../context/CartContext'
 const ItemDetail = ({ product }) => {
 
     const [compras, setCompras] = useState(0);
-    const [comprasACargar, setComprasACargar] = useState(0);
 
     const  { sales ,setPurchase,addItem,purchase } = useContext(CartContext)
 
-    function addToCart(cantidadProductos) {
-        setCompras(cantidadProductos)
+    const addToCart = (cantidadProductos)=> {
+        setPurchase(purchase + cantidadProductos);
+        setCompras(cantidadProductos);
+        addItem(product,cantidadProductos,sales);
     }
 
     
@@ -62,20 +63,20 @@ const ItemDetail = ({ product }) => {
 
                 {
                 
-                comprasACargar === 0 
+                compras === 0 
                 ?  
                 
                 <div className="caja-contador">
-                <div className="cantidad-compras">{compras}</div>
                 <ItemCounter inital={1} stock={product?.stock} onConfirm={addToCart}/>
-                <button className="bnt-reset" disabled={compras <= 0} onClick={()=>{addItem(product,compras,sales);setComprasACargar(compras);setPurchase(purchase + compras)}}>Agregar al carrito</button>
                 </div> 
                     
                     :   
                 
                     <div className="caja-ir-compra">
-                    <h3>¡Agregaste {comprasACargar} productos al carrito!</h3>
+                    <h3>¡Agregaste {compras} productos al carrito!</h3>
+                    <Link to={`/`} className="bnt-reset" >Continuar comprando</Link>
                     <Link to={`/card`} className="bnt-reset" >Terminar compra</Link>
+
                     </div> 
                     
                 } 

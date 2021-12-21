@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
 import './Sale.css'
 import CartContext  from '../../context/CartContext'
 import { formatter } from '../../products'
