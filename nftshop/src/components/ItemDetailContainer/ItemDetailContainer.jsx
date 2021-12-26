@@ -37,7 +37,9 @@ const ItemDetailContainer = ()=> {
         <div>
           {
             loading === true ? 
-            <h1>Cargando</h1>
+            <div className='caja-loading'>
+                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+             </div>
             :
             <ItemDetail product={product}/>
         }

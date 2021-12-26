@@ -80,7 +80,7 @@ body{
 /* Profile */
 
 .profile{
-    border-bottom: solid 1px var(--hovercolor);
+    border-top: solid 1px var(--hovercolor);
     padding: var(--padding) 0;
     text-align: center;
 }

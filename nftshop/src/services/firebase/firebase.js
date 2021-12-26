@@ -3,12 +3,12 @@ import { getFirestore } from 'firebase/firestore'
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCFwQsomyLhuC_7deQ_E2PcPVtALCjqHm0",
-    authDomain: "nftshop-coderhouse.firebaseapp.com",
-    projectId: "nftshop-coderhouse",
-    storageBucket: "nftshop-coderhouse.appspot.com",
-    messagingSenderId: "42246454268",
-    appId: "1:42246454268:web:f081417107fcdaa31f9079"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
   };
 
 

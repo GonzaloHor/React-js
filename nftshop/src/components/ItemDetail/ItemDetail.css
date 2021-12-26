@@ -70,7 +70,7 @@
 
 .caja-ir-compra{
     background-color: gray;
-    height: 200px;
+    height: 150px;
     width: 350px;
     border-radius: 50px;
     margin-top: 10px;
@@ -82,4 +82,10 @@
 .caja-ir-compra h3{
    margin-top: 20px; 
    font-size: 20px;
+}
+
+.caja-sin-stock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

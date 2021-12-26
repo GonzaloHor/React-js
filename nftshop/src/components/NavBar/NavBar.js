@@ -29,16 +29,6 @@ const NavBar = () => {
 
         
           
-                {
-                   sales.length === 0 ? 
-                   <></>
-                   :
-                   <div class="profile">
-                   <CardWidget />
-                   </div>
-                }
-               
-          
    
             <div class="menu-items">
 
@@ -62,6 +52,18 @@ const NavBar = () => {
                     </a>
                     </Link>
             </div>
+
+            
+          
+            {
+                   sales.length === 0 ? 
+                   <></>
+                   :
+                   <div class="profile">
+                   <CardWidget />
+                   </div>
+                }
+               
          </header>
    );
 }

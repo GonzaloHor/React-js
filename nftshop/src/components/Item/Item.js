@@ -15,7 +15,7 @@ const Item = ({ product }) => {
             <p>
                 Precio: {formatter.format(product.price)}
             </p>
-            <Link className='btn btn-primary mb-4' to={`/detail/${product.id}`}>Ver detalle</Link>
+            <Link className='btn btn-primary mb-4 btn-ver-detalle' to={`/detail/${product.id}`}>Ver detalle</Link>
 
             
         </div>

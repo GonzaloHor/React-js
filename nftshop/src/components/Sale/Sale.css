@@ -45,8 +45,7 @@
     margin-right: 20px;
 }
 .btn-delete-sale:hover{
-    transform: scale(1.5);
-    border: solid 1px ivory;
+    transform: scale(1.2);
 }
 
 

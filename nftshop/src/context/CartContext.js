@@ -9,6 +9,11 @@ export const CartContextProvider = ({children}) =>{
 
    
 
+    const clearContext = ()=>{
+        setSales([])
+        setPurchase(0)
+    }
+
 
     const addItem = (product, compras, sales) =>{
         if(sales.length === 0){
@@ -72,7 +77,7 @@ export const CartContextProvider = ({children}) =>{
    
     return (
         <Context.Provider value={{
-            setSales, sales, setPurchase, purchase,remobeItem,remobeAllItem,addItem
+            setSales, sales, setPurchase, purchase,remobeItem,remobeAllItem,addItem,clearContext
         }}>
             {children}
         </Context.Provider>

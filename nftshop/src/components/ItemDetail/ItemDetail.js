@@ -33,8 +33,6 @@ const ItemDetail = ({ product }) => {
 
 
         setPurchase(pruchaseQuantity)
-        console.log(pruchaseQuantity)
-       
     }
 
 
@@ -62,24 +60,35 @@ const ItemDetail = ({ product }) => {
         
 
                 {
-                
-                compras === 0 
-                ?  
-                
-                <div className="caja-contador">
-                <ItemCounter inital={1} stock={product?.stock} onConfirm={addToCart}/>
-                </div> 
-                    
-                    :   
-                
-                    <div className="caja-ir-compra">
-                    <h3>¡Agregaste {compras} productos al carrito!</h3>
-                    <Link to={`/`} className="bnt-reset" >Continuar comprando</Link>
-                    <Link to={`/card`} className="bnt-reset" >Terminar compra</Link>
-
+                    product?.stock === 0 ? 
+                    <div className="caja-contador caja-sin-stock">
+                        <h2>No hay Stock de este prodcuto</h2>
                     </div> 
-                    
-                } 
+                    :
+                    <>
+                    {
+                
+                        compras === 0 
+                        ?  
+                        
+                        <div className="caja-contador">
+                        <ItemCounter inital={1} stock={product?.stock} onConfirm={addToCart}/>
+                        </div> 
+                            
+                            :   
+                        
+                            <div className="caja-ir-compra">
+                            <h3>¡Agregaste {compras} productos al carrito!</h3>
+                            <Link to={`/`} className="bnt-reset" >Continuar comprando</Link>
+                            <Link to={`/card`} className="bnt-reset" >Ir a carrito</Link>
+        
+                            </div> 
+                            
+                        } 
+                    </>
+                }
+
+
         </div>
            
         </div>
