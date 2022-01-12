@@ -15,8 +15,8 @@ const ImgNavBar = () => {
 
     return(
 
-        <div class="photo">
-            <Link to={'/card'}><img src={carrito} alt="NFT Shop" class="img-cardWidget" /></Link> 
+        <div className="photo">
+            <Link to={'/card'}><img src={carrito} alt="NFT Shop" className="img-cardWidget" /></Link> 
             <p className="cantidadProductosCard">{purchase}</p>
         </div>
  

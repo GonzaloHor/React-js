@@ -1,9 +1,3 @@
-import reloj1 from '../src/img/reloj.jpg'
-import reloj2 from '../src/img/reloj2.jpg'
-import ropa from '../src/img/ropa.jpg'
-import zapas from '../src/img/zapas.jpeg'
-import zapas2 from '../src/img/zapas2.jpg'
-
 
 const categories = [
     {id:'celular',description:'Celular'},

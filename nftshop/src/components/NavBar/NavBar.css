@@ -134,7 +134,7 @@ body{
 
 
 
-.item a:hover {
+.item .item-navbar:hover {
     background-color: var(--hovercolor);
 }
 
@@ -244,7 +244,7 @@ body{
     margin: 10PX;
 }
 
-.menu-collapsed:hover .menu-items .item a .title {
+.menu-collapsed:hover .menu-items .item .item-navbar .title {
       display: inline-block;
       font-family: var(--second-font-family);
       font-size: 17px;
@@ -266,7 +266,7 @@ body{
 .menu-collapsed:hover .menu-items{
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .menu-collapsed:hover .menu-items .item{
@@ -274,7 +274,7 @@ body{
 }
 
 
-.menu-collapsed:hover .menu-items .item a{
+.menu-collapsed:hover .menu-items .item .item-navbar{
     display: flex;
     width: 400px;
     align-items: center;
@@ -333,7 +333,7 @@ body{
 
 .menu-collapsed:hover .header{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;

@@ -23,18 +23,6 @@ const ItemDetail = ({ product }) => {
     }
 
     
-  
-    const sumaSales = (sales)=>{
-        let pruchaseQuantity = 0;
-
-        for(let i = 0; i < sales.length;i++){
-            pruchaseQuantity = pruchaseQuantity + sales[i].quantity
-        }
-
-
-        setPurchase(pruchaseQuantity)
-    }
-
 
 
 

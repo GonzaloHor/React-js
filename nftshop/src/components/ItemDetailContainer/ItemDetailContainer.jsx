@@ -1,7 +1,6 @@
 
 import React, {useState, useEffect} from "react";
 import ItemDetail from "../ItemDetail/ItemDetail.js";
-import { getProductById } from '../../products' ;
 import { useParams } from "react-router";
 import { db } from "../../services/firebase/firebase";
 import { getDoc, doc } from "firebase/firestore";
@@ -20,8 +19,6 @@ const ItemDetailContainer = ()=> {
        getDoc(doc(db, 'items', paramId)).then((querySnapshot)=>{
         const product = { id: querySnapshot.id, ...querySnapshot.data()}
         setProduct(product)
-        console.log(product)
-
     }).catch((error) =>{
         console.log('Error searching item', error)
     }).finally(()=>{
@@ -38,7 +35,7 @@ const ItemDetailContainer = ()=> {
           {
             loading === true ? 
             <div className='caja-loading'>
-                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                 <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
              </div>
             :
             <ItemDetail product={product}/>

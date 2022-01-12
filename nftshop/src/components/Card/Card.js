@@ -5,7 +5,7 @@ import './Card.css'
 import { formatter } from '../../products'
 import { Link } from 'react-router-dom'
 import { db } from '../../services/firebase/firebase'
-import { addDoc, collection, updateDoc, doc, Timestamp, writeBatch, getDoc, DocumentSnapshot} from 'firebase/firestore'
+import { addDoc, collection, doc, Timestamp, writeBatch, getDoc} from 'firebase/firestore'
 
 
 const Card = ()=> {
@@ -127,31 +127,31 @@ const Card = ()=> {
                                   <>
                                     {
                                         confirmar === true ?  <form className='container container-form' onSubmit={(event)=>{event.preventDefault()}}>
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                                        <div className="mb-3">
+                                            <label for="exampleInputEmail1" className="form-label">Nombre</label>
                                             <input 
-                                            type="text" class="form-control" 
+                                            type="text" className="form-control" 
                                             name="name"
                                             onChange={handleInputChange}/>
                                         </div>
                                         
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label">Telefono</label>
+                                        <div className="mb-3">
+                                            <label for="exampleInputPassword1" className="form-label">Telefono</label>
                                             <input 
                                             type="text" 
-                                            class="form-control" 
+                                            className="form-control" 
                                             name="phone"  
                                             onChange={handleInputChange}/>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label">Email</label>
+                                        <div className="mb-3">
+                                            <label for="exampleInputPassword1" className="form-label">Email</label>
                                             <input 
                                             type="email" 
-                                            class="form-control"
+                                            className="form-control"
                                              name="email"
                                              onChange={handleInputChange}/>
                                         </div>
-                                            <button type="submit" class=" btn-terminar-compra" disabled={ buyer.name === "" || buyer.phone === ""  || buyer.email === "" } onClick={()=>{setConfirmar(false)}}>Cargar Datos</button>
+                                            <button type="submit" className=" btn-terminar-compra" disabled={ buyer.name === "" || buyer.phone === ""  || buyer.email === "" } onClick={()=>{setConfirmar(false)}}>Cargar Datos</button>
                                         <div className="mt-4">
                                             <button className='btn-cancelar-compra' onClick={()=>{setTerminar(true)}}>Cancelar</button>
                                         </div>
@@ -178,7 +178,7 @@ const Card = ()=> {
                                         :
                                         <div className='caja-confirmar'>
                                             <div className='cajados'>
-                                                <div className='caja-confirmar'><div class="lds-ripple"><div></div><div></div></div></div>
+                                                <div className='caja-confirmar'><div className="lds-ripple"><div></div><div></div></div></div>
                                             </div> 
                                          </div>
                                     }
